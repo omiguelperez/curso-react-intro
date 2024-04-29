@@ -1,5 +1,4 @@
-function TodoList(props) {
-  const { children } = props;
+function TodoList({ children }) {
   return <ul>{children}</ul>;
 }
 

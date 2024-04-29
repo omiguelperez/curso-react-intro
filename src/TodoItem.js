@@ -1,5 +1,4 @@
-function TodoItem(props) {
-  const { title } = props;
+function TodoItem({ title, completed }) {
   return (
     <li>
       <span>V</span>
