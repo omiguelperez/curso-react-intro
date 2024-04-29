@@ -12,16 +12,23 @@ const defaultTodos = [
   { text: 'Build and deploy a sample project', completed: true },
   { text: 'Take the Node.js course', completed: true },
   { text: 'Take the NLP course', completed: false },
+  { text: 'Take the Python course', completed: true },
 ];
 
 function App() {
+  const [todos, setTodos] = React.useState(defaultTodos);
+  const [searchValue, setSearchValue] = React.useState('');
+
+  const completedTodos = todos.filter((todo) => !!todo.completed).length;
+  const totalTodos = todos.length;
+
   return (
     <>
-      <TodoCounter completed={16} total={25} />
-      <TodoSearch />
+      <TodoCounter completed={completedTodos} total={totalTodos} />
+      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
-        {defaultTodos.map((todo) => (
+        {todos.map((todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
