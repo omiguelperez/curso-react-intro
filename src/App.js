@@ -36,7 +36,9 @@ function App() {
   };
 
   const deleteTodo = (text) => {
-    const newTodos = todos.filter((todo) => todo.text !== text);
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    newTodos.splice(todoIndex, 1);
     setTodos(newTodos);
   };
 
