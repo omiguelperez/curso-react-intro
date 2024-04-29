@@ -35,6 +35,11 @@ function App() {
     setTodos(newTodos);
   };
 
+  const deleteTodo = (text) => {
+    const newTodos = todos.filter((todo) => todo.text !== text);
+    setTodos(newTodos);
+  };
+
   return (
     <>
       <TodoCounter completed={completedTodos} total={totalTodos} />
@@ -47,6 +52,7 @@ function App() {
             text={todo.text}
             completed={todo.completed}
             onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
           />
         ))}
       </TodoList>
