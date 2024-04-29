@@ -9,14 +9,14 @@ import './App.css';
 const defaultTodos = [
   { text: 'Make food', completed: true },
   { text: 'Take the React.js course', completed: false },
-  { text: 'Build and deploy a sample project', completed: false },
-  { text: 'Take the Node.js course', completed: false },
+  { text: 'Build and deploy a sample project', completed: true },
+  { text: 'Take the Node.js course', completed: true },
   { text: 'Take the NLP course', completed: false },
 ];
 
 function App() {
   return (
-    <React.Fragment>
+    <>
       <TodoCounter completed={16} total={25} />
       <TodoSearch />
 
@@ -24,14 +24,14 @@ function App() {
         {defaultTodos.map((todo) => (
           <TodoItem
             key={todo.text}
-            title={todo.text}
+            text={todo.text}
             completed={todo.completed}
           />
         ))}
       </TodoList>
 
       <CreateTodoButton />
-    </React.Fragment>
+    </>
   );
 }
 

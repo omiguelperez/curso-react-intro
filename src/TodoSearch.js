@@ -1,5 +1,9 @@
+import './TodoSearch.css';
+
 function TodoSearch() {
-  return <input placeholder="New TODO..." />;
+  return (
+    <input className="TodoSearch" placeholder="Launch rocket to the moon..." />
+  );
 }
 
 export { TodoSearch };
