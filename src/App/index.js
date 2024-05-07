@@ -36,15 +36,9 @@ function App() {
       </TodoHeader>
 
       <TodoList>
-        {loading && (
-          <>
-            <TodosLoading />
-            <TodosLoading />
-            <TodosLoading />
-          </>
-        )}
-        {!loading && !error && searchedTodos.length === 0 && <EmptyTodos />}
-        {!loading && !!error && <TodosError />}
+        {error && <TodosError />}
+        {loading && <TodosLoading />}
+        {!loading && !searchedTodos.length && <EmptyTodos />}
 
         {searchedTodos.map((todo) => (
           <TodoItem
