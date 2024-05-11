@@ -45,7 +45,7 @@ function App() {
         onLoading={() => <TodosLoading />}
         onEmptyTodos={() => <EmptyTodos />}
         onEmptySearchResults={(searchText) => (
-          <p>No hay resultados para {searchText}</p>
+          <p>No results for {searchText}</p>
         )}
       >
         {(todo) => (
