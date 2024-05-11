@@ -2,7 +2,12 @@ import { withStorageListener } from './withStorageListener';
 
 const ChangeAlert = ({ show, toggleShow }) => {
   if (show) {
-    return <p>There were changes</p>;
+    return (
+      <div>
+        <p>There were changes</p>
+        <button onClick={toggleShow}>Refresh</button>
+      </div>
+    );
   }
 };
 
