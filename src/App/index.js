@@ -11,7 +11,7 @@ import { Modal } from '../Modal';
 import { TodoForm } from '../TodoForm';
 import { useTodos } from './useTodos';
 import { TodoHeader } from '../TodoHeader';
-import { ChangeAlertWithStorageListener } from '../ChangeAlert';
+import { ChangeAlert } from '../ChangeAlert';
 
 function App() {
   const {
@@ -63,7 +63,7 @@ function App() {
 
       <CreateTodoButton setOpenModal={setOpenModal} />
 
-      <ChangeAlertWithStorageListener sync={syncTodos} />
+      <ChangeAlert sync={syncTodos} />
 
       {openModal && (
         <Modal>
