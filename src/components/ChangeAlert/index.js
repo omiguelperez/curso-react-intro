@@ -1,4 +1,4 @@
-import { useStorageListener } from './useStorageListener';
+import { useStorageListener } from '../../hooks/useStorageListener';
 import './ChangeAlert.css';
 
 const ChangeAlert = ({ sync }) => {
