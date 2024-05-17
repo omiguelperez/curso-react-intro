@@ -1,8 +1,9 @@
 import { DeleteIcon } from '../TodoIcon/DeleteIcon';
 import { CompleteIcon } from '../TodoIcon/CompleteIcon';
+import { EditIcon } from '../TodoIcon/EditIcon';
 import './TodoItem.css';
 
-function TodoItem({ text, completed, onComplete, onDelete }) {
+function TodoItem({ text, completed, onComplete, onDelete, onEdit }) {
   return (
     <li className="TodoItem">
       <CompleteIcon completed={completed} onComplete={onComplete} />
@@ -10,6 +11,7 @@ function TodoItem({ text, completed, onComplete, onDelete }) {
         {text}
       </p>
       <DeleteIcon onDelete={onDelete} />
+      <EditIcon onEdit={onEdit} />
     </li>
   );
 }
