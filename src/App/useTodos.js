@@ -45,19 +45,23 @@ function useTodos() {
   };
 
   return {
-    loading,
-    error,
-    totalTodos,
-    completedTodos,
-    searchValue,
-    setSearchValue,
-    searchedTodos,
-    completeTodo,
-    deleteTodo,
-    openModal,
-    setOpenModal,
-    addTodo,
-    syncTodos,
+    state: {
+      error,
+      loading,
+      searchedTodos,
+      totalTodos,
+      completedTodos,
+      searchValue,
+      openModal,
+    },
+    stateUpdaters: {
+      completeTodo,
+      deleteTodo,
+      addTodo,
+      setOpenModal,
+      setSearchValue,
+      syncTodos,
+    },
   };
 }
 
