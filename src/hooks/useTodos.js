@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useLocalStorage } from './useLocalStorage';
 
 function useTodos() {
@@ -8,7 +9,7 @@ function useTodos() {
     loading,
     error,
     syncItem: syncTodos,
-  } = useLocalStorage('TODOS_V1', []);
+  } = useLocalStorage('TODOS_V2', []);
   const [searchValue, setSearchValue] = useState('');
   const [openModal, setOpenModal] = useState(false);
 
@@ -22,24 +23,26 @@ function useTodos() {
   });
 
   const addTodo = (text) => {
+    const id = newTodoId();
     const newTodos = [...todos];
     newTodos.push({
       completed: false,
       text,
+      id,
     });
     saveTodos(newTodos);
   };
 
-  const completeTodo = (text) => {
+  const completeTodo = (id) => {
     const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    const todoIndex = newTodos.findIndex((todo) => todo.id === id);
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
     saveTodos(newTodos);
   };
 
-  const deleteTodo = (text) => {
+  const deleteTodo = (id) => {
     const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+    const todoIndex = newTodos.findIndex((todo) => todo.id === id);
     newTodos.splice(todoIndex, 1);
     saveTodos(newTodos);
   };
@@ -64,5 +67,9 @@ function useTodos() {
     },
   };
 }
+
+const newTodoId = () => {
+  return uuidv4();
+};
 
 export { useTodos };
