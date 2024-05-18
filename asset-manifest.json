@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/curso-react-intro/static/css/main.cddf48eb.css",
-    "main.js": "/curso-react-intro/static/js/main.b79caeed.js",
-    "index.html": "/curso-react-intro/index.html",
-    "static/media/delete.svg": "/curso-react-intro/static/media/delete.7018c4465589031bd51c8efbe21df9ca.svg",
-    "static/media/check.svg": "/curso-react-intro/static/media/check.e9a948bba52a34123d2ed7aeda0ea495.svg",
-    "main.cddf48eb.css.map": "/curso-react-intro/static/css/main.cddf48eb.css.map",
-    "main.b79caeed.js.map": "/curso-react-intro/static/js/main.b79caeed.js.map"
+    "main.css": "/todo-machine/static/css/main.5a6c7ffd.css",
+    "main.js": "/todo-machine/static/js/main.dcade3ce.js",
+    "index.html": "/todo-machine/index.html",
+    "static/media/delete.svg": "/todo-machine/static/media/delete.7018c4465589031bd51c8efbe21df9ca.svg",
+    "static/media/edit.svg": "/todo-machine/static/media/edit.8cfd1d84718f081de4327bd813c4738c.svg",
+    "static/media/check.svg": "/todo-machine/static/media/check.e9a948bba52a34123d2ed7aeda0ea495.svg",
+    "main.5a6c7ffd.css.map": "/todo-machine/static/css/main.5a6c7ffd.css.map",
+    "main.dcade3ce.js.map": "/todo-machine/static/js/main.dcade3ce.js.map"
   },
   "entrypoints": [
-    "static/css/main.cddf48eb.css",
-    "static/js/main.b79caeed.js"
+    "static/css/main.5a6c7ffd.css",
+    "static/js/main.dcade3ce.js"
   ]
 }
