@@ -32,6 +32,11 @@ function useTodos() {
     saveTodos(newTodos);
   };
 
+  const getTodo = (id) => {
+    const todoIndex = todos.findIndex((todo) => todo.id === id);
+    return todos[todoIndex];
+  };
+
   const editTodo = (id, newText) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.id === id);
@@ -64,6 +69,7 @@ function useTodos() {
     },
     stateUpdaters: {
       addTodo,
+      getTodo,
       editTodo,
       completeTodo,
       deleteTodo,

@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TodoForm.css';
 
-function TodoForm({ formTitle, submitText, submitEvent }) {
+function TodoForm({ formTitle, submitText, defaultTodoText, submitEvent }) {
   const navigate = useNavigate();
-  const [newTodoValue, setNewTodoValue] = useState('');
+  const [newTodoValue, setNewTodoValue] = useState(defaultTodoText || '');
 
   const onSubmit = (event) => {
     event.preventDefault();

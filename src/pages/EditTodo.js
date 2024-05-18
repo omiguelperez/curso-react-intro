@@ -5,18 +5,25 @@ import { useTodos } from '../hooks/useTodos';
 function EditTodo() {
   const { id } = useParams();
   const {
-    stateUpdaters: { editTodo },
+    state: { loading },
+    stateUpdaters: { editTodo, getTodo },
   } = useTodos();
 
-  return (
-    <>
-      <TodoForm
-        formTitle="Edit your TODO task"
-        submitText="Edit"
-        submitEvent={(newText) => editTodo(id, newText)}
-      />
-    </>
-  );
+  if (loading) {
+    return <p>Loading...</p>;
+  } else {
+    const todo = getTodo(id);
+    return (
+      <>
+        <TodoForm
+          formTitle="Edit your TODO task"
+          submitText="Edit"
+          defaultTodoText={todo?.text}
+          submitEvent={(newText) => editTodo(id, newText)}
+        />
+      </>
+    );
+  }
 }
 
 export { EditTodo };
