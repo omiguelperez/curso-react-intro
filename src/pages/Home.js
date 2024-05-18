@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { TodoList } from '../components/TodoList';
 import { TodoCounter } from '../components/TodoCounter';
 import { TodoSearch } from '../components/TodoSearch';
@@ -23,6 +23,7 @@ function Home() {
     completedTodos,
     searchValue,
   } = state;
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const { completeTodo, deleteTodo, setSearchValue, syncTodos } = stateUpdaters;
 
@@ -30,7 +31,13 @@ function Home() {
     <>
       <TodoHeader loading={loading}>
         <TodoCounter completedTodos={completedTodos} totalTodos={totalTodos} />
-        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+        <TodoSearch
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+          disabled={loading}
+          searchParams={searchParams}
+          setSearchParams={setSearchParams}
+        />
       </TodoHeader>
 
       <TodoList
