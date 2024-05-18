@@ -6,19 +6,15 @@ function TodoForm({ formTitle, submitText, submitEvent }) {
   const navigate = useNavigate();
   const [newTodoValue, setNewTodoValue] = useState('');
 
-  const onCancel = () => {
-    navigate('/');
-  };
-
   const onSubmit = (event) => {
     event.preventDefault();
     submitEvent(newTodoValue);
     navigate('/');
   };
 
-  const onChange = (event) => {
-    setNewTodoValue(event.target.value);
-  };
+  const onCancel = () => navigate('/');
+
+  const onChange = (event) => setNewTodoValue(event.target.value);
 
   return (
     <form onSubmit={onSubmit}>
